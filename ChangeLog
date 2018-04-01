@@ -1,6 +1,8 @@
-Qt 5.10 introduces many new features and improvements as well as bugfixes
-over the 5.9.x series. For more details, refer to the online documentation
-included in this distribution. The documentation is also available online:
+Qt 5.10.1 is a bug-fix release. It maintains both forward and backward
+compatibility (source and binary) with Qt 5.10.0.
+
+For more details, refer to the online documentation included in this
+distribution. The documentation is also available online:
 
 http://doc.qt.io/qt-5/index.html
 
@@ -15,27 +17,56 @@ https://bugreports.qt.io/
 Each of these identifiers can be entered in the bug tracker to obtain more
 information about a particular change.
 
+This release contains all fixes included in the Qt 5.9.4 release.
+
 ****************************************************************************
-*                               Qt 5.10.0 Changes                           *
+*                            Qt 5.10.1 Changes                             *
 ****************************************************************************
 
- - [QTBUG-57045] Fixed crash when calling pause in the onPositionChanged
-   handler.
+QtMultimedia
+------------
+
+- [QTBUG-62155] Improved the quality when rendering YUVY and UYVY video frames.
+- [QTBUG-43098] The alpha channel for ARGB32 video frames are now retained.
+- [QTBUG-57197] Fixed media players state reporting when called in a slot.
+- [QTBUG-53099] Fixed sizing issue when rendering to widgets backed by
+  a QOffscreenSurface.
 
 ****************************************************************************
 *                      Platform Specific Changes                           *
 ****************************************************************************
 
-QNX
----
- - Added support for setting audio roles.
-
-Linux
+macOS
 -----
- - [QTBUG-62621] Unsupported audio formats in PulseAudio will now be rejected
-   instead of being played incorrectly.
- - [QTBUG-63427] QSoundEffect with PulseAudio now supports 24 bit samples.
 
-Windows
--------
- - Added support for QMediaMetaData::Orientation.
+- [QTBUG-49558] Fixed duration updates for HTTP streams.
+
+PulseAudio
+----------
+
+- [QTBUG-65220] Fixed deadlock in QSoundEffect when using PulseAudio
+
+DirectShow
+----------
+
+- [QTBUG-59320] Made it possible to call DirectShow with only QCoreApplication.
+- [QTBUG-51405] Fixed rendering of overlapping MDI subwindows.
+- [QTBUG-64438] Fixed rendering of videos with pixel aspect ration other then 1:1.
+
+WinRT
+-----
+
+- [QTBUG-60904] Enabled the AudioCapture backend on WinRT.
+
+GStreamer
+---------
+
+- [QTBUG-64080] Fixed camera selection logic to handle devices being
+  loaded and unloaded.
+- [QTBUG-64155] Fixed error handling when no input device is provided.
+
+ALSA
+----
+
+- [QTBUG-63007] Improved the latency in QSoundEffect, by not querying the available
+  devices each time a new track got played.
