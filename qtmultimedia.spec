@@ -4,7 +4,7 @@
 #
 Name     : qtmultimedia
 Version  : 5.10.1
-Release  : 4
+Release  : 5
 URL      : http://download.qt.io/official_releases/qt/5.10/5.10.1/submodules/qtmultimedia-everywhere-src-5.10.1.tar.xz
 Source0  : http://download.qt.io/official_releases/qt/5.10/5.10.1/submodules/qtmultimedia-everywhere-src-5.10.1.tar.xz
 Summary  : No detailed summary available
@@ -32,6 +32,7 @@ BuildRequires : pkgconfig(libpulse)
 BuildRequires : pkgconfig(libpulse-mainloop-glib)
 BuildRequires : pkgconfig(openal)
 BuildRequires : qtbase-dev
+BuildRequires : qtbase-extras
 
 %description
 This example performs some simple OpenCL operations on camera or video input
