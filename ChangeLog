@@ -1,8 +1,10 @@
-Qt 5.12 introduces many new features and improvements as well as bugfixes
-over the 5.11.x series. For more details, refer to the online documentation
-included in this distribution. The documentation is also available online:
+Qt 5.12.1 is a bug-fix release. It maintains both forward and backward
+compatibility (source and binary) with Qt 5.12.0.
 
-https://doc.qt.io/qt-5/index.html
+For more details, refer to the online documentation included in this
+distribution. The documentation is also available online:
+
+http://doc.qt.io/qt-5/index.html
 
 The Qt version 5.12 series is binary compatible with the 5.11.x series.
 Applications compiled for 5.11 will continue to run with 5.12.
@@ -15,14 +17,12 @@ https://bugreports.qt.io/
 Each of these identifiers can be entered in the bug tracker to obtain more
 information about a particular change.
 
- - This release contains only minor code improvements.
-
 ****************************************************************************
-*                            Qt 5.12.0 Changes                             *
+*                            Qt 5.12.1 Changes                             *
 ****************************************************************************
 
- - [QTBUG-52114] Interpreted ARGB32 as premultiplied for GraphicsVideoItem.
-
+ - [QTBUG-54901 Fixed QCamera to return ServiceMissingError
+   if no camera can be found by name.
 
 ****************************************************************************
 *                      Platform Specific Changes                           *
@@ -31,29 +31,38 @@ information about a particular change.
 Gstreamer
 ---------
 
- - [QTBUG-39327] Added an ability to pass custom pipeline and video sink.
-   Also registered "qtvideosink" gstreamer element to be used in pipelines.
- - [QTBUG-69402] Emitted stateChanged(StoppedState) when recording is finished.
+ - [QTBUG-51769] Fixed camera example to apply video settings.
+ - [QTBUG-64178] Fixed compilation error
+   if GST_VIDEO_REGION_OF_INTEREST_META_INFO is not available.
+ - Added fix to avoid creating video profile if no codec provided.
+ - Added fix to build gstreamer on Windows and MSVC.
 
-WindowsAudio
-------------
+CoreAudio
+---------
 
- - [QTBUG-63492] Fixed crackling at the end of playback.
- - [QTBUG-45174] Introduced QT_WAVE_BUFFERS env var to define numbers of buffers.
+ - [QTBUG-63492] Added logic to decrease volume when playback is stopped
+   to avoid popping noise.
 
 DirectShow
 ----------
 
- - [QTBUG-32743] Implemented image capture settings.
- - [QTBUG-53019] Added option to allow building without evr support.
-   The environment variable QT_DIRECTHSOW_NO_EVR can now be used to disable EVR at runtime.
+ - [QTBUG-68768] The camera will now use the pixel format requested by
+   QCameraViewFinderSettings, if supported, instead of defaulting to RGB32.
+ - [QTBUG-71851] Added fix to display windows error string when camera fails.
+ - [QTBUG-42057] Added fix to restart an inactive surface when a new frame is received.
+ - [QTBUG-72012] Added fix to keep the last video buffer from sample grabber.
 
-Android
+Alsa
+----
+
+ - Fixed QSoundEffect to prevent openning a device twice.
+
+Windows
 -------
 
- - [QTBUG-61115] Implemented QMediaPlayer::setPlaybackRate().
+ - [QTBUG-71326] Added fix to repaint QVideoWidget when WM_PAINT or WM_ERASEBKGND received.
 
-IMX
+WMF
 ---
 
- - [QTBUG-50927] Copied data and uploaded back if mapping has not succeeded.
+ - [QTBUG-72287] Mapped PKEY_Media_EncodingSettings to QMediaMetaData::Description.
