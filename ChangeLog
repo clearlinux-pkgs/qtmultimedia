@@ -1,10 +1,10 @@
-Qt 5.12.1 is a bug-fix release. It maintains both forward and backward
-compatibility (source and binary) with Qt 5.12.0.
+Qt 5.12.2 is a bug-fix release. It maintains both forward and backward
+compatibility (source and binary) with Qt 5.12.0 through 5.12.1.
 
 For more details, refer to the online documentation included in this
 distribution. The documentation is also available online:
 
-http://doc.qt.io/qt-5/index.html
+https://doc.qt.io/qt-5/index.html
 
 The Qt version 5.12 series is binary compatible with the 5.11.x series.
 Applications compiled for 5.11 will continue to run with 5.12.
@@ -17,12 +17,13 @@ https://bugreports.qt.io/
 Each of these identifiers can be entered in the bug tracker to obtain more
 information about a particular change.
 
+ - This release contains only minor code improvements.
+
 ****************************************************************************
-*                            Qt 5.12.1 Changes                             *
+*                            Qt 5.12.2 Changes                             *
 ****************************************************************************
 
- - [QTBUG-54901 Fixed QCamera to return ServiceMissingError
-   if no camera can be found by name.
+- Fixed a crash in the media player when an application is exited while a media player is still playing.
 
 ****************************************************************************
 *                      Platform Specific Changes                           *
@@ -31,38 +32,14 @@ information about a particular change.
 Gstreamer
 ---------
 
- - [QTBUG-51769] Fixed camera example to apply video settings.
- - [QTBUG-64178] Fixed compilation error
-   if GST_VIDEO_REGION_OF_INTEREST_META_INFO is not available.
- - Added fix to avoid creating video profile if no codec provided.
- - Added fix to build gstreamer on Windows and MSVC.
+ - [QTBUG-39327] Introduced possibility to set custom pipeline using gst-pipeline url scheme.
 
-CoreAudio
----------
+Android
+-------
 
- - [QTBUG-63492] Added logic to decrease volume when playback is stopped
-   to avoid popping noise.
+ - [QTBUG-67280] Fixed memory leak of GL resources when DeferredDelete event is not delivered.
 
 DirectShow
 ----------
 
- - [QTBUG-68768] The camera will now use the pixel format requested by
-   QCameraViewFinderSettings, if supported, instead of defaulting to RGB32.
- - [QTBUG-71851] Added fix to display windows error string when camera fails.
- - [QTBUG-42057] Added fix to restart an inactive surface when a new frame is received.
- - [QTBUG-72012] Added fix to keep the last video buffer from sample grabber.
-
-Alsa
-----
-
- - Fixed QSoundEffect to prevent openning a device twice.
-
-Windows
--------
-
- - [QTBUG-71326] Added fix to repaint QVideoWidget when WM_PAINT or WM_ERASEBKGND received.
-
-WMF
----
-
- - [QTBUG-72287] Mapped PKEY_Media_EncodingSettings to QMediaMetaData::Description.
+ - [QTBUG-73461] Fixed a crash when camera is being destroyed.
