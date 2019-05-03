@@ -1,5 +1,5 @@
-Qt 5.12.2 is a bug-fix release. It maintains both forward and backward
-compatibility (source and binary) with Qt 5.12.0 through 5.12.1.
+Qt 5.12.3 is a bug-fix release. It maintains both forward and backward
+compatibility (source and binary) with Qt 5.12.0 through 5.12.2.
 
 For more details, refer to the online documentation included in this
 distribution. The documentation is also available online:
@@ -20,10 +20,10 @@ information about a particular change.
  - This release contains only minor code improvements.
 
 ****************************************************************************
-*                            Qt 5.12.2 Changes                             *
+*                            Qt 5.12.3 Changes                             *
 ****************************************************************************
 
-- Fixed a crash in the media player when an application is exited while a media player is still playing.
+- Fixed QCameraInfo to be invalid if camera failed to find device.
 
 ****************************************************************************
 *                      Platform Specific Changes                           *
@@ -32,14 +32,9 @@ information about a particular change.
 Gstreamer
 ---------
 
- - [QTBUG-39327] Introduced possibility to set custom pipeline using gst-pipeline url scheme.
+ - [QTBUG-73557] Fixed setting surface from current renderer after changing the pipeline.
 
-Android
--------
+ WinRT
+ -----
 
- - [QTBUG-67280] Fixed memory leak of GL resources when DeferredDelete event is not delivered.
-
-DirectShow
-----------
-
- - [QTBUG-73461] Fixed a crash when camera is being destroyed.
+  - [QTBUG-72874] Fixed camera preview/image capture to use highest supported resolution.
