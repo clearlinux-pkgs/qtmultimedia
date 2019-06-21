@@ -1,5 +1,5 @@
-Qt 5.12.3 is a bug-fix release. It maintains both forward and backward
-compatibility (source and binary) with Qt 5.12.0 through 5.12.2.
+Qt 5.12.4 is a bug-fix release. It maintains both forward and backward
+compatibility (source and binary) with Qt 5.12.0 through 5.12.3.
 
 For more details, refer to the online documentation included in this
 distribution. The documentation is also available online:
@@ -20,21 +20,38 @@ information about a particular change.
  - This release contains only minor code improvements.
 
 ****************************************************************************
-*                            Qt 5.12.3 Changes                             *
+*                            Qt 5.12.4 Changes                             *
 ****************************************************************************
 
-- Fixed QCameraInfo to be invalid if camera failed to find device.
+- [QTBUG-57836] Fixed QGraphicsVideoItem to always use the generic painter
+  when no gl paint engine is available.
+- [QTBUG-74277] Fixed usage of makeCurrent in QPainterVideoSurface.
 
 ****************************************************************************
 *                      Platform Specific Changes                           *
 ****************************************************************************
 
-Gstreamer
----------
+- Android:
+  * [QTBUG-73582] Fixed QMediaRecorder's status changes after start/stop.
+  * [QTBUG-73582] The camera's stateChanged signal is now immediately sent
+    regardless of the current activity state.
+  * [QTBUG-73582] Fixed the camera to prevent it from opening the same device twice.
+  * [QTBUG-73237] Added support for starting the camera without an available viewfinder.
 
- - [QTBUG-73557] Fixed setting surface from current renderer after changing the pipeline.
+- AVFoundation:
+  * [QTBUG-75285] Fixed the usage of $PRODUCT_NAME in the Info.plist to only be used
+    with the macx-xcode spec.
 
- WinRT
- -----
+- GStreamer:
+  * [QTBUG-75314] The pipeline will now be reset to GST_STATE_PAUSED instead of
+    GST_STATE_NULL after EndIfStream.
+  * [QTBUG-72468] Fixed deadlock when the state of the pipeline is requested in ASYNC mode.
+  * Added a possibility to use streams in the player's custom pipeline
+    if it contains an appsrc element.
+  * Added dumping of dot file of the player's pipeline if GST_DEBUG_DUMP_DOT_DIR is set.
 
-  - [QTBUG-72874] Fixed camera preview/image capture to use highest supported resolution.
+- DirectShow:
+  * [QTBUG-65574] Fixed the media player to prevent updating the status
+    when there are no finished tasks.
+  * [QTBUG-65574] Removed the start/end times in QVideoFrame.
+  * [QTBUG-65574] Fixed the player to return an error for invalid urls.
