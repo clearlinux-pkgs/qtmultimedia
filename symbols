@@ -5,7 +5,7 @@ libQt5Multimedia.so.5:Qt_5.10
 libQt5Multimedia.so.5:Qt_5.11
 libQt5Multimedia.so.5:Qt_5.12
 libQt5Multimedia.so.5:Qt_5.13
-libQt5Multimedia.so.5:Qt_5.13.1_PRIVATE_API
+libQt5Multimedia.so.5:Qt_5.13.2_PRIVATE_API
 libQt5Multimedia.so.5:Qt_5.2
 libQt5Multimedia.so.5:Qt_5.3
 libQt5Multimedia.so.5:Qt_5.4
@@ -1917,7 +1917,7 @@ libQt5Multimedia.so.5:_ZmiRK15QMediaTimeRangeS1_
 libQt5Multimedia.so.5:_ZneRK15QMediaTimeRangeS1_
 libQt5Multimedia.so.5:_ZneRK18QMediaTimeIntervalS1_
 libQt5Multimedia.so.5:_ZplRK15QMediaTimeRangeS1_
-libQt5MultimediaGstTools.so.5:Qt_5.13.1_PRIVATE_API
+libQt5MultimediaGstTools.so.5:Qt_5.13.2_PRIVATE_API
 libQt5MultimediaGstTools.so.5:_Z18qt_gst_video_sinksv
 libQt5MultimediaGstTools.so.5:_Z19qt_gst_pad_get_capsP7_GstPad
 libQt5MultimediaGstTools.so.5:_Z21qt_gst_caps_normalizeP8_GstCaps
@@ -1962,10 +1962,8 @@ libQt5MultimediaGstTools.so.5:_ZN15QGstVideoBufferD1Ev
 libQt5MultimediaGstTools.so.5:_ZN15QGstVideoBufferD2Ev
 libQt5MultimediaGstTools.so.5:_ZN17QGstreamerMessageC1EP11_GstMessage
 libQt5MultimediaGstTools.so.5:_ZN17QGstreamerMessageC1ERKS_
-libQt5MultimediaGstTools.so.5:_ZN17QGstreamerMessageC1Ev
 libQt5MultimediaGstTools.so.5:_ZN17QGstreamerMessageC2EP11_GstMessage
 libQt5MultimediaGstTools.so.5:_ZN17QGstreamerMessageC2ERKS_
-libQt5MultimediaGstTools.so.5:_ZN17QGstreamerMessageC2Ev
 libQt5MultimediaGstTools.so.5:_ZN17QGstreamerMessageD1Ev
 libQt5MultimediaGstTools.so.5:_ZN17QGstreamerMessageD2Ev
 libQt5MultimediaGstTools.so.5:_ZN17QGstreamerMessageaSERKS_
@@ -2057,6 +2055,7 @@ libQt5MultimediaGstTools.so.5:_ZN23QGstreamerPlayerControlC2EP23QGstreamerPlayer
 libQt5MultimediaGstTools.so.5:_ZN23QGstreamerPlayerControlD0Ev
 libQt5MultimediaGstTools.so.5:_ZN23QGstreamerPlayerControlD1Ev
 libQt5MultimediaGstTools.so.5:_ZN23QGstreamerPlayerControlD2Ev
+libQt5MultimediaGstTools.so.5:_ZN23QGstreamerPlayerSession11initPlaybinEv
 libQt5MultimediaGstTools.so.5:_ZN23QGstreamerPlayerSession11loadFromUriERK15QNetworkRequest
 libQt5MultimediaGstTools.so.5:_ZN23QGstreamerPlayerSession11qt_metacallEN11QMetaObject4CallEiPPv
 libQt5MultimediaGstTools.so.5:_ZN23QGstreamerPlayerSession11qt_metacastEPKc
@@ -2070,6 +2069,7 @@ libQt5MultimediaGstTools.so.5:_ZN23QGstreamerPlayerSession12invalidMediaEv
 libQt5MultimediaGstTools.so.5:_ZN23QGstreamerPlayerSession12stateChangedEN12QMediaPlayer5StateE
 libQt5MultimediaGstTools.so.5:_ZN23QGstreamerPlayerSession12updateVolumeEv
 libQt5MultimediaGstTools.so.5:_ZN23QGstreamerPlayerSession13parsePipelineEv
+libQt5MultimediaGstTools.so.5:_ZN23QGstreamerPlayerSession13resetElementsEv
 libQt5MultimediaGstTools.so.5:_ZN23QGstreamerPlayerSession13volumeChangedEi
 libQt5MultimediaGstTools.so.5:_ZN23QGstreamerPlayerSession14getStreamsInfoEv
 libQt5MultimediaGstTools.so.5:_ZN23QGstreamerPlayerSession14loadFromStreamERK15QNetworkRequestP9QIODevice
@@ -2114,6 +2114,7 @@ libQt5MultimediaGstTools.so.5:_ZN23QGstreamerPlayerSession4seekEx
 libQt5MultimediaGstTools.so.5:_ZN23QGstreamerPlayerSession4stopEv
 libQt5MultimediaGstTools.so.5:_ZN23QGstreamerPlayerSession5errorEiRK7QString
 libQt5MultimediaGstTools.so.5:_ZN23QGstreamerPlayerSession5pauseEv
+libQt5MultimediaGstTools.so.5:_ZN23QGstreamerPlayerSession6setBusEP7_GstBus
 libQt5MultimediaGstTools.so.5:_ZN23QGstreamerPlayerSession8addProbeEP27QGstreamerAudioProbeControl
 libQt5MultimediaGstTools.so.5:_ZN23QGstreamerPlayerSession8addProbeEP27QGstreamerVideoProbeControl
 libQt5MultimediaGstTools.so.5:_ZN23QGstreamerPlayerSession8setMutedEb
@@ -2336,7 +2337,7 @@ libQt5MultimediaGstTools.so.5:_ZThn32_N28QGstreamerVideoWidgetControl18processSy
 libQt5MultimediaGstTools.so.5:_ZThn40_N21QGstreamerVideoWindow17processBusMessageERK17QGstreamerMessage
 libQt5MultimediaGstTools.so.5:_ZThn40_N28QGstreamerVideoWidgetControl17processBusMessageERK17QGstreamerMessage
 libQt5MultimediaGstTools.so.5:_Zls6QDebugP8_GstCaps
-libQt5MultimediaQuick.so.5:Qt_5.13.1_PRIVATE_API
+libQt5MultimediaQuick.so.5:Qt_5.13.2_PRIVATE_API
 libQt5MultimediaQuick.so.5:_ZN12QSGVideoNode23setTexturedRectGeometryERK6QRectFS2_i
 libQt5MultimediaQuick.so.5:_ZN12QSGVideoNodeC1Ev
 libQt5MultimediaQuick.so.5:_ZN12QSGVideoNodeC2Ev
@@ -2405,7 +2406,7 @@ libQt5MultimediaWidgets.so.5:Qt_5.10
 libQt5MultimediaWidgets.so.5:Qt_5.11
 libQt5MultimediaWidgets.so.5:Qt_5.12
 libQt5MultimediaWidgets.so.5:Qt_5.13
-libQt5MultimediaWidgets.so.5:Qt_5.13.1_PRIVATE_API
+libQt5MultimediaWidgets.so.5:Qt_5.13.2_PRIVATE_API
 libQt5MultimediaWidgets.so.5:Qt_5.2
 libQt5MultimediaWidgets.so.5:Qt_5.3
 libQt5MultimediaWidgets.so.5:Qt_5.4
