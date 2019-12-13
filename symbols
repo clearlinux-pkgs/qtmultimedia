@@ -5,7 +5,8 @@ libQt5Multimedia.so.5:Qt_5.10
 libQt5Multimedia.so.5:Qt_5.11
 libQt5Multimedia.so.5:Qt_5.12
 libQt5Multimedia.so.5:Qt_5.13
-libQt5Multimedia.so.5:Qt_5.13.2_PRIVATE_API
+libQt5Multimedia.so.5:Qt_5.14
+libQt5Multimedia.so.5:Qt_5.14.0_PRIVATE_API
 libQt5Multimedia.so.5:Qt_5.2
 libQt5Multimedia.so.5:Qt_5.3
 libQt5Multimedia.so.5:Qt_5.4
@@ -1542,6 +1543,7 @@ libQt5Multimedia.so.5:_ZNK13QMediaContent12canonicalUrlEv
 libQt5Multimedia.so.5:_ZNK13QMediaContent16canonicalRequestEv
 libQt5Multimedia.so.5:_ZNK13QMediaContent17canonicalResourceEv
 libQt5Multimedia.so.5:_ZNK13QMediaContent6isNullEv
+libQt5Multimedia.so.5:_ZNK13QMediaContent7requestEv
 libQt5Multimedia.so.5:_ZNK13QMediaContent8playlistEv
 libQt5Multimedia.so.5:_ZNK13QMediaContent9resourcesEv
 libQt5Multimedia.so.5:_ZNK13QMediaContenteqERKS_
@@ -1917,7 +1919,7 @@ libQt5Multimedia.so.5:_ZmiRK15QMediaTimeRangeS1_
 libQt5Multimedia.so.5:_ZneRK15QMediaTimeRangeS1_
 libQt5Multimedia.so.5:_ZneRK18QMediaTimeIntervalS1_
 libQt5Multimedia.so.5:_ZplRK15QMediaTimeRangeS1_
-libQt5MultimediaGstTools.so.5:Qt_5.13.2_PRIVATE_API
+libQt5MultimediaGstTools.so.5:Qt_5.14.0_PRIVATE_API
 libQt5MultimediaGstTools.so.5:_Z18qt_gst_video_sinksv
 libQt5MultimediaGstTools.so.5:_Z19qt_gst_pad_get_capsP7_GstPad
 libQt5MultimediaGstTools.so.5:_Z21qt_gst_caps_normalizeP8_GstCaps
@@ -1986,6 +1988,7 @@ libQt5MultimediaGstTools.so.5:_ZN21QGstVideoRendererSink13instance_initEP14_GTyp
 libQt5MultimediaGstTools.so.5:_ZN21QGstVideoRendererSink18propose_allocationEP12_GstBaseSinkP9_GstQuery
 libQt5MultimediaGstTools.so.5:_ZN21QGstVideoRendererSink23handleShowPrerollChangeEP8_GObjectP11_GParamSpecPv
 libQt5MultimediaGstTools.so.5:_ZN21QGstVideoRendererSink4stopEP12_GstBaseSink
+libQt5MultimediaGstTools.so.5:_ZN21QGstVideoRendererSink5queryEP12_GstBaseSinkP9_GstQuery
 libQt5MultimediaGstTools.so.5:_ZN21QGstVideoRendererSink6unlockEP12_GstBaseSink
 libQt5MultimediaGstTools.so.5:_ZN21QGstVideoRendererSink8finalizeEP8_GObject
 libQt5MultimediaGstTools.so.5:_ZN21QGstVideoRendererSink8get_capsEP12_GstBaseSinkP8_GstCaps
@@ -2236,6 +2239,7 @@ libQt5MultimediaGstTools.so.5:_ZN9QGstUtils23structureFrameRateRangeEPK13_GstStr
 libQt5MultimediaGstTools.so.5:_ZN9QGstUtils24fileExtensionForMimeTypeERK7QString
 libQt5MultimediaGstTools.so.5:_ZN9QGstUtils24fromGStreamerOrientationERK8QVariant
 libQt5MultimediaGstTools.so.5:_ZN9QGstUtils25structurePixelAspectRatioEPK13_GstStructure
+libQt5MultimediaGstTools.so.5:_ZN9QGstUtils9useOpenGLEv
 libQt5MultimediaGstTools.so.5:_ZNK10QGstAppSrc10metaObjectEv
 libQt5MultimediaGstTools.so.5:_ZNK10QGstAppSrc6streamEv
 libQt5MultimediaGstTools.so.5:_ZNK14QGstCodecsInfo12codecElementERK7QString
@@ -2337,7 +2341,7 @@ libQt5MultimediaGstTools.so.5:_ZThn32_N28QGstreamerVideoWidgetControl18processSy
 libQt5MultimediaGstTools.so.5:_ZThn40_N21QGstreamerVideoWindow17processBusMessageERK17QGstreamerMessage
 libQt5MultimediaGstTools.so.5:_ZThn40_N28QGstreamerVideoWidgetControl17processBusMessageERK17QGstreamerMessage
 libQt5MultimediaGstTools.so.5:_Zls6QDebugP8_GstCaps
-libQt5MultimediaQuick.so.5:Qt_5.13.2_PRIVATE_API
+libQt5MultimediaQuick.so.5:Qt_5.14.0_PRIVATE_API
 libQt5MultimediaQuick.so.5:_ZN12QSGVideoNode23setTexturedRectGeometryERK6QRectFS2_i
 libQt5MultimediaQuick.so.5:_ZN12QSGVideoNodeC1Ev
 libQt5MultimediaQuick.so.5:_ZN12QSGVideoNodeC2Ev
@@ -2406,7 +2410,8 @@ libQt5MultimediaWidgets.so.5:Qt_5.10
 libQt5MultimediaWidgets.so.5:Qt_5.11
 libQt5MultimediaWidgets.so.5:Qt_5.12
 libQt5MultimediaWidgets.so.5:Qt_5.13
-libQt5MultimediaWidgets.so.5:Qt_5.13.2_PRIVATE_API
+libQt5MultimediaWidgets.so.5:Qt_5.14
+libQt5MultimediaWidgets.so.5:Qt_5.14.0_PRIVATE_API
 libQt5MultimediaWidgets.so.5:Qt_5.2
 libQt5MultimediaWidgets.so.5:Qt_5.3
 libQt5MultimediaWidgets.so.5:Qt_5.4
