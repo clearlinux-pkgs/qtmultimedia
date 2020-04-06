@@ -1,5 +1,5 @@
-Qt 5.14.1 is a bug-fix release. It maintains both forward and backward
-compatibility (source and binary) with Qt 5.14.0.
+Qt 5.14.2 is a bug-fix release. It maintains both forward and backward
+compatibility (source and binary) with Qt 5.14.0 through 5.14.1.
 
 For more details, refer to the online documentation included in this
 distribution. The documentation is also available online:
@@ -21,5 +21,25 @@ information about a particular change.
 *                        Platform Specific Changes                         *
 ****************************************************************************
 
-- WebGL:
-  * [QTBUG-79181] Fixed video rendering for WebGL on iMX platforms.
+- Android:
+  * [QTBUG-81006] Fixed issue when multimedia plugins were not loaded.
+  * [QTBUG-59517] Fixed to prevent multiple copies of one tmp file
+    when playing video from qrc.
+
+- GStreamer:
+  * [QTBUG-81075] Fixed creating incorrect encoding profile
+    to avoid errors when the media container is not supported
+    in the video recorder.
+  * Fixed to have separate resolution settings for capturing and
+    camera's viewfinder.
+
+- AVFoundation:
+  * [QTBUG-81048] Fixed applying viewfinder settings when starting the camera.
+  * [QTBUG-79935] Fixed applying viewfinder settings for iOS.
+  * [QTBUG-81804] Removed usage of deperecated AVPlayerItem::seekToTime::CMTime.
+  * [QTBUG-81912] Fixed to resume playback after a stalled buffer
+    only if it was already in playing state.
+  * [QTBUG-65536] Fixed to have proper size bounds when resizing the window
+    while playing video.
+  * [QTBUG-82542] Fixed content flickering on resize for video player.
+  * [QTBUG-82264] Fixed to use only video surface's supported pixel formats in Camera.
