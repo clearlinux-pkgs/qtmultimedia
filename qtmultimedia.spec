@@ -4,7 +4,7 @@
 #
 Name     : qtmultimedia
 Version  : 5.15.2
-Release  : 26
+Release  : 27
 URL      : https://download.qt.io/official_releases/qt/5.15/5.15.2/submodules/qtmultimedia-everywhere-src-5.15.2.tar.xz
 Source0  : https://download.qt.io/official_releases/qt/5.15/5.15.2/submodules/qtmultimedia-everywhere-src-5.15.2.tar.xz
 Summary  : No detailed summary available
