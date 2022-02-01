@@ -1,0 +1,79 @@
+Andy Shaw (1):
+      Revert "Map QVideoFrame::Format_Y8=>QImage::Format_Grayscale8 in QVideoFrame"
+
+Antti Kokko (1):
+      Add changes file for Qt 5.15.2
+
+Jani Heikkinen (1):
+      Bump version
+
+diff --git a/src/multimedia/video/qvideoframe.cpp b/src/multimedia/video/qvideoframe.cpp
+index 7840eda31..fd7b74075 100644
+--- a/src/multimedia/video/qvideoframe.cpp
++++ b/src/multimedia/video/qvideoframe.cpp
+@@ -964,8 +964,6 @@ QVideoFrame::PixelFormat QVideoFrame::pixelFormatFromImageFormat(QImage::Format
+         return Format_RGB555;
+     case QImage::Format_RGB888:
+         return Format_RGB24;
+-    case QImage::Format_Grayscale8:
+-        return Format_Y8;
+     default:
+         return Format_Invalid;
+     }
+@@ -1019,13 +1017,12 @@ QImage::Format QVideoFrame::imageFormatFromPixelFormat(PixelFormat format)
+     case Format_IMC2:
+     case Format_IMC3:
+     case Format_IMC4:
++    case Format_Y8:
+     case Format_Y16:
+     case Format_Jpeg:
+     case Format_CameraRaw:
+     case Format_AdobeDng:
+         return QImage::Format_Invalid;
+-    case Format_Y8:
+-        return QImage::Format_Grayscale8;
+     case Format_User:
+     default:
+         return QImage::Format_Invalid;
+diff --git a/src/multimediawidgets/qpaintervideosurface.cpp b/src/multimediawidgets/qpaintervideosurface.cpp
+index 80bfec7bc..5fe76d869 100644
+--- a/src/multimediawidgets/qpaintervideosurface.cpp
++++ b/src/multimediawidgets/qpaintervideosurface.cpp
+@@ -109,8 +109,7 @@ QVideoSurfaceGenericPainter::QVideoSurfaceGenericPainter()
+         m_imagePixelFormats << QVideoFrame::Format_RGB24;
+ 
+      m_imagePixelFormats << QVideoFrame::Format_ARGB32
+-                         << QVideoFrame::Format_RGB565
+-                         << QVideoFrame::Format_Y8;
++                         << QVideoFrame::Format_RGB565;
+ }
+ 
+ QList<QVideoFrame::PixelFormat> QVideoSurfaceGenericPainter::supportedPixelFormats(
+diff --git a/tests/auto/unit/qpaintervideosurface/tst_qpaintervideosurface.cpp b/tests/auto/unit/qpaintervideosurface/tst_qpaintervideosurface.cpp
+index 98ec5fc06..be5c85ab9 100644
+--- a/tests/auto/unit/qpaintervideosurface/tst_qpaintervideosurface.cpp
++++ b/tests/auto/unit/qpaintervideosurface/tst_qpaintervideosurface.cpp
+@@ -253,8 +253,8 @@ void tst_QPainterVideoSurface::supportedFormat_data()
+             << QAbstractVideoBuffer::NoHandle
+             << QVideoFrame::Format_Y8
+             << QSize(640, 480)
+-            << true
+-            << true;
++            << false
++            << false;
+     QTest::newRow("Texture: rgb32 640x480")
+             << QAbstractVideoBuffer::GLTextureHandle
+             << QVideoFrame::Format_RGB32
+diff --git a/tests/auto/unit/qvideoframe/tst_qvideoframe.cpp b/tests/auto/unit/qvideoframe/tst_qvideoframe.cpp
+index e99c4bf77..402ddf334 100644
+--- a/tests/auto/unit/qvideoframe/tst_qvideoframe.cpp
++++ b/tests/auto/unit/qvideoframe/tst_qvideoframe.cpp
+@@ -978,7 +978,7 @@ void tst_QVideoFrame::formatConversion_data()
+             << QImage::Format_Invalid
+             << QVideoFrame::Format_IMC4;
+     QTest::newRow("QVideoFrame::Format_Y8")
+-            << QImage::Format_Grayscale8
++            << QImage::Format_Invalid
+             << QVideoFrame::Format_Y8;
+     QTest::newRow("QVideoFrame::Format_Y16")
+             << QImage::Format_Invalid
