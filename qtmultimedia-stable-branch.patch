@@ -7,6 +7,29 @@ Antti Kokko (1):
 Jani Heikkinen (1):
       Bump version
 
+Paul Wicking (1):
+      Doc: Fix typo
+
+Samuli Piippo (1):
+      imx6 video plugin depends on gstreamer
+
+Tarja Sundqvist (2):
+      Update commercial license headers
+      Revert "Update commercial license headers"
+
+diff --git a/src/multimedia/playback/qmediaplayer.cpp b/src/multimedia/playback/qmediaplayer.cpp
+index 1b8c0df2d..382d8b30b 100644
+--- a/src/multimedia/playback/qmediaplayer.cpp
++++ b/src/multimedia/playback/qmediaplayer.cpp
+@@ -1349,7 +1349,7 @@ QStringList QMediaPlayer::supportedCustomAudioRoles() const
+     Defines the status of a media player's current media.
+ 
+     \value UnknownMediaStatus The status of the media cannot be determined.
+-    \value NoMedia The is no current media.  The player is in the StoppedState.
++    \value NoMedia There is no current media. The player is in the StoppedState.
+     \value LoadingMedia The current media is being loaded. The player may be in any state.
+     \value LoadedMedia The current media has been loaded. The player is in the StoppedState.
+     \value StalledMedia Playback of the current media has stalled due to insufficient buffering or
 diff --git a/src/multimedia/video/qvideoframe.cpp b/src/multimedia/video/qvideoframe.cpp
 index 7840eda31..fd7b74075 100644
 --- a/src/multimedia/video/qvideoframe.cpp
@@ -49,6 +72,19 @@ index 80bfec7bc..5fe76d869 100644
  }
  
  QList<QVideoFrame::PixelFormat> QVideoSurfaceGenericPainter::supportedPixelFormats(
+diff --git a/src/plugins/videonode/videonode.pro b/src/plugins/videonode/videonode.pro
+index ab7295406..889862c36 100644
+--- a/src/plugins/videonode/videonode.pro
++++ b/src/plugins/videonode/videonode.pro
+@@ -1,7 +1,7 @@
+ TEMPLATE = subdirs
+ QT_FOR_CONFIG += gui-private multimedia-private
+ 
+-qtConfig(gpu_vivante) {
++qtConfig(gpu_vivante):qtConfig(gstreamer) {
+     SUBDIRS += imx6
+ }
+ 
 diff --git a/tests/auto/unit/qpaintervideosurface/tst_qpaintervideosurface.cpp b/tests/auto/unit/qpaintervideosurface/tst_qpaintervideosurface.cpp
 index 98ec5fc06..be5c85ab9 100644
 --- a/tests/auto/unit/qpaintervideosurface/tst_qpaintervideosurface.cpp
