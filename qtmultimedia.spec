@@ -4,7 +4,7 @@
 #
 Name     : qtmultimedia
 Version  : 5.15.2
-Release  : 31
+Release  : 32
 URL      : https://download.qt.io/official_releases/qt/5.15/5.15.2/submodules/qtmultimedia-everywhere-src-5.15.2.tar.xz
 Source0  : https://download.qt.io/official_releases/qt/5.15/5.15.2/submodules/qtmultimedia-everywhere-src-5.15.2.tar.xz
 Summary  : No detailed summary available
@@ -94,7 +94,7 @@ test -r config.log && cat config.log
 make  %{?_smp_mflags}
 
 %install
-export SOURCE_DATE_EPOCH=1653526234
+export SOURCE_DATE_EPOCH=1655664797
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/qtmultimedia
 cp %{_builddir}/qtmultimedia-everywhere-src-5.15.2/LICENSE.FDL %{buildroot}/usr/share/package-licenses/qtmultimedia/61907422fefcd2313a9b570c31d203a6dbebd333
