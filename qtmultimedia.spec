@@ -4,7 +4,7 @@
 #
 Name     : qtmultimedia
 Version  : 5.15.2
-Release  : 32
+Release  : 33
 URL      : https://download.qt.io/official_releases/qt/5.15/5.15.2/submodules/qtmultimedia-everywhere-src-5.15.2.tar.xz
 Source0  : https://download.qt.io/official_releases/qt/5.15/5.15.2/submodules/qtmultimedia-everywhere-src-5.15.2.tar.xz
 Summary  : No detailed summary available
@@ -94,15 +94,15 @@ test -r config.log && cat config.log
 make  %{?_smp_mflags}
 
 %install
-export SOURCE_DATE_EPOCH=1655664797
+export SOURCE_DATE_EPOCH=1662656637
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/qtmultimedia
-cp %{_builddir}/qtmultimedia-everywhere-src-5.15.2/LICENSE.FDL %{buildroot}/usr/share/package-licenses/qtmultimedia/61907422fefcd2313a9b570c31d203a6dbebd333
-cp %{_builddir}/qtmultimedia-everywhere-src-5.15.2/LICENSE.GPL2 %{buildroot}/usr/share/package-licenses/qtmultimedia/4cc77b90af91e615a64ae04893fdffa7939db84c
-cp %{_builddir}/qtmultimedia-everywhere-src-5.15.2/LICENSE.GPL3 %{buildroot}/usr/share/package-licenses/qtmultimedia/8624bcdae55baeef00cd11d5dfcfa60f68710a02
-cp %{_builddir}/qtmultimedia-everywhere-src-5.15.2/LICENSE.GPL3-EXCEPT %{buildroot}/usr/share/package-licenses/qtmultimedia/e93757aefa405f2c9a8a55e780ae9c39542dfc3a
-cp %{_builddir}/qtmultimedia-everywhere-src-5.15.2/LICENSE.LGPL3 %{buildroot}/usr/share/package-licenses/qtmultimedia/f45ee1c765646813b442ca58de72e20a64a7ddba
-cp %{_builddir}/qtmultimedia-everywhere-src-5.15.2/examples/multimedia/spectrum/3rdparty/fftreal/license.txt %{buildroot}/usr/share/package-licenses/qtmultimedia/2a9842312685da1c09bd4f9cd48d7f1a61b7e6b5
+cp %{_builddir}/qtmultimedia-everywhere-src-%{version}/LICENSE.FDL %{buildroot}/usr/share/package-licenses/qtmultimedia/61907422fefcd2313a9b570c31d203a6dbebd333 || :
+cp %{_builddir}/qtmultimedia-everywhere-src-%{version}/LICENSE.GPL2 %{buildroot}/usr/share/package-licenses/qtmultimedia/4cc77b90af91e615a64ae04893fdffa7939db84c || :
+cp %{_builddir}/qtmultimedia-everywhere-src-%{version}/LICENSE.GPL3 %{buildroot}/usr/share/package-licenses/qtmultimedia/8624bcdae55baeef00cd11d5dfcfa60f68710a02 || :
+cp %{_builddir}/qtmultimedia-everywhere-src-%{version}/LICENSE.GPL3-EXCEPT %{buildroot}/usr/share/package-licenses/qtmultimedia/e93757aefa405f2c9a8a55e780ae9c39542dfc3a || :
+cp %{_builddir}/qtmultimedia-everywhere-src-%{version}/LICENSE.LGPL3 %{buildroot}/usr/share/package-licenses/qtmultimedia/f45ee1c765646813b442ca58de72e20a64a7ddba || :
+cp %{_builddir}/qtmultimedia-everywhere-src-%{version}/examples/multimedia/spectrum/3rdparty/fftreal/license.txt %{buildroot}/usr/share/package-licenses/qtmultimedia/2a9842312685da1c09bd4f9cd48d7f1a61b7e6b5 || :
 %make_install
 
 %files
