@@ -1,3 +1,6 @@
+Andreas Holzammer (1):
+      PulseAudio: Call pa_stream_flush() with PulseDaemonLocker lock held
+
 Andy Shaw (2):
       Revert "Map QVideoFrame::Format_Y8=>QImage::Format_Grayscale8 in QVideoFrame"
       AVFoundation: Only remove the video output if it is still attached
@@ -12,6 +15,9 @@ Jani Heikkinen (2):
       Bump version
       Bump version
 
+Joerg Bornemann (1):
+      Fix incorrectly generated CMake files for the QNX audio plugin
+
 Marc Mutz (1):
       QPulseAudioSource: fix UB (memcpy() called with nullptr dest) in read()
 
@@ -24,15 +30,33 @@ Paul Wicking (1):
 Samuli Piippo (1):
       imx6 video plugin depends on gstreamer
 
-Tarja Sundqvist (7):
+Tarja Sundqvist (9):
       Update commercial license headers
       Revert "Update commercial license headers"
+      Bump version
       Bump version
       Bump version
       Merge remote-tracking branch 'origin/tqtc/lts-5.15.4' into tqtc/lts-5.15-opensource
       Merge remote-tracking branch 'origin/tqtc/lts-5.15.5' into tqtc/lts-5.15-opensource
       Merge remote-tracking branch 'origin/tqtc/lts-5.15.6' into tqtc/lts-5.15-opensource
+      Merge remote-tracking branch 'origin/tqtc/lts-5.15.7' into tqtc/lts-5.15-opensource
 
+diff --git a/src/multimedia/audio/qsoundeffect_pulse_p.cpp b/src/multimedia/audio/qsoundeffect_pulse_p.cpp
+index 51cdde026..a141f7e36 100644
+--- a/src/multimedia/audio/qsoundeffect_pulse_p.cpp
++++ b/src/multimedia/audio/qsoundeffect_pulse_p.cpp
+@@ -552,8 +552,10 @@ void QSoundEffectPrivate::setVolume(qreal volume)
+ 
+     m_volume = qBound(qreal(0), volume, qreal(1));
+     locker.unlock();
+-    if (!m_playing && m_pulseStream)
++    if (!m_playing && m_pulseStream) {
++        PulseDaemonLocker locker;
+         pa_stream_flush(m_pulseStream, volume_stream_flush_callback, m_ref->getRef());
++    }
+     emit volumeChanged();
+ }
+ 
 diff --git a/src/multimedia/playback/qmediaplayer.cpp b/src/multimedia/playback/qmediaplayer.cpp
 index 1b8c0df2d..382d8b30b 100644
 --- a/src/multimedia/playback/qmediaplayer.cpp
@@ -496,6 +520,16 @@ index 2b5325132..b68b4af1b 100644
          memcpy(dest, src, len);
  }
  
+diff --git a/src/plugins/qnx-audio/audio/audio.pro b/src/plugins/qnx-audio/audio/audio.pro
+index bd69dfe1e..d63e58676 100644
+--- a/src/plugins/qnx-audio/audio/audio.pro
++++ b/src/plugins/qnx-audio/audio/audio.pro
+@@ -19,4 +19,5 @@ SOURCES += qnxaudioplugin.cpp \
+ OTHER_FILES += qnx_audio.json
+ 
+ PLUGIN_TYPE = audio
++PLUGIN_CLASS_NAME = QnxAudioPlugin
+ load(qt_plugin)
 diff --git a/src/plugins/videonode/videonode.pro b/src/plugins/videonode/videonode.pro
 index ab7295406..889862c36 100644
 --- a/src/plugins/videonode/videonode.pro
